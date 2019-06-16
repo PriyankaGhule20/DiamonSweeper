@@ -1,84 +1,100 @@
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
   margin: 0;
   border: 0;
   box-sizing: border-box; }
 
 .text-center {
   text-align: center; }
-
-.template {
-  display: none; }
-  .template .score {
-    color: #868E96; }
-
-.game-title {
-  margin-top: 20px;
-  font-size: 1.3rem; }
-
+.bg_container
+{
+  background-size: cover;
+  padding: 25px 25px 42px 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0,0.2)), url(../images/bg_image.jpg) center center;
+}
+.template
+{
+  display: none;
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+}
+  .template .score 
+  {
+    color: #fff; 
+  }
+    .game-title 
+    {
+      font-size: 2.3rem;
+      color: #fff;
+      margin-bottom: 28px;
+  }
+.game-grid
+{
+  background-color: #ffe600;
+}
 .game-container {
-  width: 500px;
-  height: 400px;
-  margin: 20px auto;
-  background-color: #fff;
-  color: #fff;
-  border: 6px solid #2c3e50;
-  border-radius: 10px;
+  width: 40%;
+    height: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 0px;
   display: grid;
-  grid-template: repeat(8, 1fr)/repeat(8, 1fr); }
-  .game-container .game-grid {
-    border: 6px solid #2c3e50;
+  grid-template: repeat(8, 1fr)/repeat(8, 1fr); 
+}
+  .game-container .game-grid 
+  {
+    border: 1px solid #000;
     border-radius: 2px;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    box-shadow: 0px 0px 7px #4a4949;
+}
+
+/* Navbar css*/
+
+.navbar {
+  background-color: #f7e648;
+  position: relative;
+  min-height: 50px;
+  box-shadow: 0px 3px 8px #7b7b7b;
+  border: 1px solid transparent;
+}
+
+.navbar-brand {
+  padding: 30px 15px 15px 15px;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 43px;
+    color: #000;
+    font-weight: 600;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+
+/*Media Query */
 
 @media (max-width: 768px) {
-  .game-container {
-    width: 100%; } }
-    * {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 16px;
-        margin: 0;
-        border: 0;
-        box-sizing: border-box
-    }
-    .text-center {
-        text-align: center;
-    }
-    .template {
-        display: none;    
-        .score {
-            color:#868E96;
-        }
-    }
-    .game-title {
-        margin-top: 20px;
-        font-size: 1.3rem;
-    }
-    .game-container {
-        width: 500px;
-        height: 400px;
-        margin: 20px auto;
-        background-color: #fff;
-        color: #fff;
-        border: 6px solid #2c3e50;
-        border-radius: 10px;
-    
-        display: grid;
-        grid-template: repeat(8, 1fr) / repeat(8, 1fr);
-    
-        .game-grid {
-            border: 6px solid #2c3e50;
-            border-radius: 2px;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-    
-    @media(max-width:768px) {
-        .game-container {
-            width: 100%;
-        }
-    }
-    
+  .navbar-nav {
+    float: left;
+    margin: 0;
+}
+  .game-container
+   {
+    width: 100%; 
+  } 
+
+.navbar-header {
+  float: left;
+}
+.game-title {
+  font-size: 1.7rem;
+}
+
+}
