@@ -15,11 +15,13 @@ function initializeBoard(status) {
     if (status=="reload")
     {
         document.getElementById("template").style.display="none";
-        document.getElementById("restore_session").style.display="none";
+        document.getElementById("selection_menu").style.display="none";
+        localStorage.setItem("diamondSweeperObject",JSON.stringify({}));
     }
-    if(localStorage.getItem("diamondSweeperObject") !== null){
+    if(localStorage.getItem("diamondSweeperObject") !== "{}" && localStorage.getItem("diamondSweeperObject") !== null){
         retrieveObj = JSON.parse(localStorage.getItem("diamondSweeperObject"));
-        document.getElementById("restore_session").style.display="block";
+        document.getElementById("selection_menu").style.display="block";
+        
     }
   
     // Initializing the Flipcount to be 0
@@ -65,7 +67,11 @@ function initializeBoard(status) {
             if (FlippCount == 8) {
                 calculateScore(maxScore);
                // initializeBoard("reload");
+               localStorage.setItem("diamondSweeperObject",JSON.stringify({}));
+               document.getElementById("selection_menu").style.display="none";
                 return;
+            }else{
+
             }
         }
         else {
