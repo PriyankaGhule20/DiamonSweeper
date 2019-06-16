@@ -4,11 +4,14 @@ var FlippCount = 0;
 var diamondPositions = [];
 var maxScore;
 (function () {
-    initializeBoard();
+    initializeBoard("onload");
 })();
 
-function initializeBoard() {
-    console.info('loading the basic setup');
+function initializeBoard(status) {
+    if (status=="reload")
+    {
+        document.getElementById("template").style.display="none";
+    }
     // Initializing the Flipcount to be 0
     FlippCount = 0;
     // Maximum score can be 56
@@ -35,7 +38,7 @@ function initializeBoard() {
         // clearing the previous place diamonds
         diamondPositions.length = 0;
         while(diamondPositions.length !=8){
-            var position = Math.floor(Math.random() * 65) + 1;
+            var position = Math.floor(Math.random() * 64) + 1;
             if(!diamondPositions.includes("box-" + position)){
                 diamondPositions.push("box-" + position);
             }
@@ -51,7 +54,7 @@ function initializeBoard() {
             element.style.backgroundImage ="url('../images/diamond.png')";
             if (FlippCount == 8) {
                 calculateScore(maxScore);
-                initializeBoard();
+               // initializeBoard("reload");
                 return;
             }
         }
