@@ -58,6 +58,23 @@
   background-color: #ffe600;
   border-radius: 4px;
   margin-top: 5px;
+  width:160px;
+  cursor: pointer;
+}
+.btn_group
+{
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+  display: flex;
+  text-align: center;
+}
+.rstore_btn
+{
+  padding: 5px 18px 8px 22px;
+  background-color: #ffe600;
+  border-radius: 4px;
+  width:160px;
+  margin-top: 5px;
   cursor: pointer;
 }
 /* Navbar css*/

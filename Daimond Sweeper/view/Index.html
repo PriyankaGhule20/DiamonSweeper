@@ -19,7 +19,12 @@
                 <h2 id="current-score" class="score"></h2>
 
                 <button class="new_game_btn" onclick="initializeBoard('reload')">Start new game</button>
+               
             </div>  
+            <div class="btn_group">
+            <button class="rstore_btn" id="restore_session" onclick="restoreLastSession()" style="display: none">Restore Last session</button>
+            <button class="new_game_btn" onclick="initializeBoard('reload')">Start new game</button>
+            </div>
     <div class="game-container" id="gridContainer">
         <div class="game-grid box-1" id="box-1"></div>
         <div class="game-grid box-2" id="box-2"></div>
