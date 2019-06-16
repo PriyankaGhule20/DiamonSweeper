@@ -36,7 +36,7 @@
   width: 40%;
     height: 500px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #000;
     color: #fff;
     border: 1px solid #000;
     border-radius: 0px;
@@ -45,7 +45,7 @@
 }
   .game-container .game-grid 
   {
-    border: 1px solid #000;
+    border: 1px solid #fff;
     border-radius: 2px;
     justify-content: center;
     align-items: center;
@@ -64,7 +64,7 @@
 
 .navbar-brand {
   padding: 30px 15px 15px 15px;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
     line-height: 43px;
     color: #000;
@@ -75,6 +75,10 @@
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+.navbar-header
+{
+  text-align: center;
 }
 
 
@@ -90,9 +94,6 @@
     width: 100%; 
   } 
 
-.navbar-header {
-  float: left;
-}
 .game-title {
   font-size: 1.7rem;
 }
