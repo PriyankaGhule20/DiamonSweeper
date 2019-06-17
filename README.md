@@ -1,16 +1,17 @@
                                                      Diamond Sweeper 
 
 Project Structure
+
 The project has been built on HTML, CSS and JavaScript. 
 It can be run by executing "Index.html" file (Diamond Sweeper -> view -> Index.html)
 
-Index.html
+1)Index.html
 Index file contain html code for the view and css and script files are imported in the same
 
-Style.css
+2)Style.css
 There is no other css dependency for view apart from style.css
 
-Script.js
+3)Script.js
 The logic for the Diamon Sweeper is coded in Script.js file.
 
 •	initializeBoard(status) - Included logic for initializing the board on page load where the game starts and all cards are unclicked("question marks" are displayed).
