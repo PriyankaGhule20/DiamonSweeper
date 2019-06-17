@@ -1,6 +1,6 @@
                                                      Diamond Sweeper 
 
-Project Structure
+Project Structure:
 
 The project has been built on HTML, CSS and JavaScript. 
 It can be run by executing "Index.html" file (Diamond Sweeper -> view -> Index.html)
@@ -21,7 +21,7 @@ The logic for the Diamon Sweeper is coded in Script.js file.
 •	flipImage() - Enables the click functionality where if a on user click the card :
   If it contains diamond - Diamonds is shown 
   If it doesn't contain Diamond - It's shown as blank
-  (Interim this function flipcount calculation and max score calculation logic executes)
+  (Interim this function does flipcount calculation and when all diamonds are disclosed max score calculation logic executes)
 
 •	calculateScore(total) - Total score is returned to view from this function.
 
