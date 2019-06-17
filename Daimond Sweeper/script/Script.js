@@ -2,10 +2,12 @@
 var gridContainer = document.getElementsByClassName('game-container')[0]; 
 var FlippCount = 0;
 var diamondPositions = [];
+var diamondPositionsInt = [];
 var selectedCells = [];
 var maxScore;
 var retrieveObj;
 var storageObject={};
+
 (function () {
     initializeBoard("onload");
 })();
@@ -17,11 +19,20 @@ function initializeBoard(status) {
         document.getElementById("template").style.display="none";
         document.getElementById("selection_menu").style.display="none";
         localStorage.setItem("diamondSweeperObject",JSON.stringify({}));
+        document.getElementById("gridContainer").style.pointerEvents="auto";
+        document.getElementById("gridContainer").style.opacity="1";
+    }
+    else if(status=="onload"){
+        document.getElementById("gridContainer").style.pointerEvents="none";
+        document.getElementById("gridContainer").style.opacity="0.5";
     }
     if(localStorage.getItem("diamondSweeperObject") !== "{}" && localStorage.getItem("diamondSweeperObject") !== null){
         retrieveObj = JSON.parse(localStorage.getItem("diamondSweeperObject"));
         document.getElementById("selection_menu").style.display="block";
-        
+    }
+    else{
+        document.getElementById("gridContainer").style.pointerEvents="auto";
+        document.getElementById("gridContainer").style.opacity="1";
     }
   
     // Initializing the Flipcount to be 0
@@ -53,15 +64,19 @@ function initializeBoard(status) {
             var position = Math.floor(Math.random() * 64) + 1;
             if(!diamondPositions.includes("box-" + position)){
                 diamondPositions.push("box-" + position);
+                diamondPositionsInt.push(position);
             }
         }
+        diamondPositionsInt.sort();
         console.log(diamondPositions);
     }
    // Daiplay diamon image on click
     function flipImage(event) {
         var id = event.target.id;
-        var element = document.getElementById(id);
-        if (diamondPositions.includes(id)) {
+        var element = document.getElementById(id);  
+        //diamondPositions.sort();
+        //diamondPositionsInt.sort();  
+            if (diamondPositions.includes(id)) {
             FlippCount++;
             element.style.backgroundImage ="url('../images/diamond.png')";
             if (FlippCount == 8) {
@@ -69,9 +84,8 @@ function initializeBoard(status) {
                // initializeBoard("reload");
                localStorage.setItem("diamondSweeperObject",JSON.stringify({}));
                document.getElementById("selection_menu").style.display="none";
+               document.getElementById("gridContainer").style.pointerEvents="none";
                 return;
-            }else{
-
             }
         }
         else {
@@ -84,7 +98,6 @@ function initializeBoard(status) {
         storageObject["diamondPositions"] = diamondPositions;
         storageObject["selectedCells"] = selectedCells;
         storageObject["FlippCount"] = FlippCount;
-
         localStorage.setItem("diamondSweeperObject",JSON.stringify(storageObject));
 
     }
@@ -112,7 +125,10 @@ function restoreLastSession(){
             if(diamondPositions.includes(box))
                 gridItem.style.background = "url('../images/diamond.png')" ; 
             else
+            {
             gridItem.style.background = "none";
+           
+            }
         }else {
             gridItem.style.background = "url('../images/question.png')" ;
         }
@@ -123,4 +139,6 @@ function restoreLastSession(){
 
     }
     document.getElementById("selection_menu").style.display="none";
+    document.getElementById("gridContainer").style.pointerEvents="auto";
+    document.getElementById("gridContainer").style.opacity="1";
 }
