@@ -1,3 +1,5 @@
+                                                        Diamond Sweeper 
+
 Project Structure
 The project has been built on HTML, CSS and JavaScript. 
 It can be run by executing "Index.html" file (Diamond Sweeper -> view -> Index.html)
