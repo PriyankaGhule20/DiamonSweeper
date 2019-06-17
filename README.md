@@ -1,4 +1,4 @@
-                                                        Diamond Sweeper 
+                                                     Diamond Sweeper 
 
 Project Structure
 The project has been built on HTML, CSS and JavaScript. 
